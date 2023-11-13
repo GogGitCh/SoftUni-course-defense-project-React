@@ -1,0 +1,30 @@
+.footer-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--primaryBlue);
+    align-items: center;
+}
+
+.contacts {
+    margin: 1em;
+}
+
+.h4, .span {
+    font-weight: bold;
+}
+
+
+.ul {
+    list-style:disc;
+}
+
+.li {
+    text-indent: 10px;
+}
+
+.icons {
+    font-size: 2em;
+    color: var(--primaryBlack);
+    margin: 0.4em
+}
+
