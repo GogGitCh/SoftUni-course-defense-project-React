@@ -1,0 +1,54 @@
+.main-item-wrapper {
+    position: relative;
+    background-color: var(--gradientBright);
+    display: flex;
+    flex-direction: column;    
+    
+}
+
+.item-image {
+    width: 20em;
+    flex: 0 0 20em;
+    aspect-ratio: 1/0.9;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.item-options {
+    position: absolute;
+    left:0;
+    bottom:1px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0.3em;
+    z-index: 10;
+    gap:0.2em
+    
+}
+
+.materials-coast,
+.labour-coast,
+.tools-needed,
+.tools-needed,
+.implemenmtation,
+.apply {
+    display: flex;
+    flex: 1 1;
+    aspect-ratio: 1/1;
+    gap:0.5em;
+    background-color:var(--gradientBrighter);
+    z-index: 20;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    color: var(--primaryBlack);
+    height: 2.3em;
+}
+
+.last {
+    margin-left: 0.5em;
+}

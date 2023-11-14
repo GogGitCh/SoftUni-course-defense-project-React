@@ -1,10 +1,29 @@
+*,
+*::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
 .app-wrapper {
-    background-image:url('../public/images/main/bg_Marber-gray.jpg');
+    /* Box sizing rules */
+
+    /* Main page */
+    /* background-image:url('../public/images/main/bg_Marber-gray.jpg'); */
+
+    /* Gallery */
+    background-image: url("../../../public/images/gallery/bg_ArmaReno-pink.jpg");
+    
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size:cover;
     background-attachment: fixed;
     /* width: auto;
     height: 100vh; */
     width: 100vw;
     height: auto;
+
+    display: flex;
+    flex-direction: column;
 }

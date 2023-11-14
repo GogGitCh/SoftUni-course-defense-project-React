@@ -6,6 +6,9 @@ import Team from "./components/main/our_team/TeamCard"
 import Carusel from "./components/common/carusels/Carusel"
 import Footer from "./components/common/footer/Footer"
 import InfogramModal from "./components/common/modals/InfogramModal"
+import Gallery from "./components/gallery/Gallery"
+import Filters from "./components/gallery/Filters"
+import Search from "./components/gallery/Search"
 
 
 function App() {
@@ -23,9 +26,13 @@ function App() {
 			{/* <Carusel /> */}
 
 		{/* Gallery */}
+			{/* <Search /> */}
+			{/* <Filters /> */}
+			{/* <Gallery /> */}
+
+
+		{/* Customer Page */}
 			
-
-
 			<Footer />
 		</div>
 	)

@@ -17,12 +17,16 @@
 
     /* Site colors */
     --primaryBlue:#3dc9b3;
+    --primaryBlueTransparent:#3dc9b360;
     --primaryWhite: white;
     --primaryBlack: black;
+    --primaryPink: #FF007F;
+    --primaryPinkTransoarent: #FF007F59;
 
     /* Gradients */
     --gradientDark:rgba(192,192,192,1);
     --gradientBright:rgba(255,255,255,0.8);
+    --gradientBrighter:rgba(255,255,255,0.45);
 
     /* Text-shadow */
     --textShadowDark:rgba(0,0,0,0.62);

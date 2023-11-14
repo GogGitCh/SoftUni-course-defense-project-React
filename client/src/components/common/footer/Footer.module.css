@@ -1,7 +1,10 @@
 .footer-wrapper {
     display: flex;
     justify-content: space-evenly;
-    background-color: var(--primaryBlue);
+    /* Main Page */
+    /* background-color: var(--primaryBlueTransparent); */
+    /* Gallery Page */
+    background-color: var(--primaryPinkTransoarent);
     align-items: center;
 }
 
