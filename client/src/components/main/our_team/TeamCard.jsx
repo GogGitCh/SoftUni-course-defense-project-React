@@ -1,6 +1,6 @@
 import styles from './TeamCard.module.css'
-import ButtonPrimary from '../common/buttons/ButtonPrimary';
-import Dash from '../common/decorations/Dash';
+import ButtonPrimary from '../../common/buttons/ButtonPrimary';
+import Dash from '../../common/decorations/Dash';
 
 
 function TeamCard() {
