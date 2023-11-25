@@ -14,7 +14,7 @@
     /* background-image:url('../public/images/main/bg_Marber-gray.jpg'); */
 
     /* Gallery */
-    background-image: url("../../../public/images/gallery/bg_ArmaReno-pink.jpg");
+    background-image: url("/images/gallery/bg_ArmaReno-pink.jpg");
     
     background-repeat: no-repeat;
     background-size:cover;

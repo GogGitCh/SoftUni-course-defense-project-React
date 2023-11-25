@@ -1,0 +1,163 @@
+.mb-3,
+.nav,
+.nav-tabs,
+.nav-fill,
+.tab-content {
+    width: 80vw;
+    margin: auto;
+    border-radius: 0.5em;
+    gap: 1em;
+    border-bottom: 0px solid transparent;
+}
+
+.mb-3 {
+    margin-top: 2em;
+}
+
+.tab-content {
+    background-color: var(--gradientBrighter);
+    margin-bottom: 2em;
+}
+
+.nav-link {
+    background-color: var(--gradientBrighter);
+    border-radius: 0.5em;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link:hover {
+    color: var(--primaryPink);
+}
+
+.nav-link.active {
+    background-color: cadetblue;
+}
+
+/* Me and my Portfolio */
+
+.tab-inner-wrapper {
+    background-color: var(--gradientBright);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 0.5em;
+    gap: 1.2em;
+}
+
+.tab-inner-wrapper-hired-by{
+    margin: 1.5em;
+}
+
+.form-field,
+.list-item {
+    width: 60%;
+    margin: auto;
+    background-color: var(--primaryWhite);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    box-shadow: 1px 1px 10px var(--textShadowBright);
+}
+
+.list-item-bri {
+    display:flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.location-icon,
+.plaster-icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.75em;
+    padding-top: 0.5em;
+}
+
+.fas.fa-image,
+.fas.fa-map-marker-alt,
+.fas.fa-image,
+.fas.fa-table-cells,
+.fas.fa-ruler-horizontal,
+.fas.fa-square-full,
+.fas.fa-brush {
+    font-size: 1.5em;
+    margin-right: 0.3em;
+}
+
+.form-button {
+    margin-top: 1.5em;
+    align-self: center;
+}
+
+.profile-img-div img {
+    width: 150px;
+    border-radius: 0.5em;
+    margin-bottom: 1.5em;
+    aspect-ratio: 1/1;
+}
+
+.profile-img-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* Available projects */
+
+.tab-inner-wrapper {
+    display: flex;
+}
+
+.tab-inner-wrapper.portfolio{
+    width: 95%;
+}
+
+.profile-bio {
+    display: flex;
+    max-width: 100%;
+    overflow-wrap:break-word;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5em;
+    margin: 0.5em;
+}
+
+.list-item {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+.list-info {
+    border: 1px solid var(--primaryPinkTransoarent);
+    border-radius: 0.3em;
+    padding: 0.3em 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.list-item-buttons {
+    display: flex;
+    gap: 0.5em;
+    width: 100%;
+    justify-content: center;
+}
+
+.list-item-buttons button {
+    width: 100%;
+}
+
+
+

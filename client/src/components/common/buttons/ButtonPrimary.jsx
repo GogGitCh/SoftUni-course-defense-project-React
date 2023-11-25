@@ -1,11 +1,16 @@
 import styles from './ButtonPrimary.module.css'
 
-function ButtonPrimary({text}) {
+function ButtonPrimary({
+    text,
+    type,
+}) {
     return (
         <>
-            <button className={styles['primary-btn']}>
-                <a className={styles['a']} href="">{text}</a>
-            </button>
+            <>
+                <button className={styles['primary-btn']} type={type}>
+                    <a className={styles['a']} href="">{text}</a>
+                </button>
+            </>
         </>
     );
 }
