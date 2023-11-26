@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import InfogramModal from '../../common/modals/InfogramModal';
+// import InfogramModal from '../../common/modals/InfogramModal';
 import styles from './infogramCards.module.css'
+
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 function InfogramCards() {
-    const [showModal, setShowModal] = useState(false);
 
+    const [show, setShow] = useState(false);
 
-    const showMoreHandler = () => setShowModal(true)
-    // const closeMoreHandler = () => setShowModal(false)
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <div className={styles['infogram-wrapper']}>
@@ -16,31 +19,47 @@ function InfogramCards() {
                 <h3 className={styles['h3']} >Learn more about how it works by chosing your role/position and exploring the others</h3>
             </section>
             <section className={styles['infogram-cards']} >
-                {/* <div className={styles['infogram-cards-wrapper']}> */}
+
                 <ul className={styles['ul']}>
 
-                    <li className={styles['li']} onClick={showMoreHandler}>
+                    <Button as={'li'} className={styles['li']} variant="info" onClick={handleShow}>
                         <p className={styles['p']}>Master</p>
                         <img className={styles['img']} src="../../../public/images/infogram_cards/Image1_1.jpg" />
-                    </li>
-                    <li className={styles['li']}>
+                    </Button>
+
+                    <Button as={'li'} className={styles['li']} variant="info" onClick={handleShow}>
                         <p className={styles['p']}>Apprentice</p>
                         <img className={styles['img']} src="../../../public/images/infogram_cards/Image2_2.jpg" />
-                    </li>
+                    </Button>
 
-                    <li className={styles['li']}>
+                    <Button as={'li'} className={styles['li']} variant="info" onClick={handleShow}>
                         <p className={styles['p']}>Client</p>
                         <img className={styles['img']} src="../../../public/images/infogram_cards/Image3_3.jpg" />
-                    </li>
+                    </Button>
 
-                    <li className={styles['li']}>
+                    <Button as={'li'} className={styles['li']} variant="info" onClick={handleShow}>
                         <p className={styles['p']}>Preparer</p>
                         <img className={styles['img']} src="../../../public/images/infogram_cards/Image4_4.jpg" />
-                    </li>
+                    </Button>
                 </ul>
-                {/* </div> */}
+
             </section>
-                    {showModal && <InfogramModal/>}
+            {show && (
+                <Modal show={show} onHide={handleClose} animation={false}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={handleClose}>
+                            Save Changes
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            )}
         </div>
     );
 }
