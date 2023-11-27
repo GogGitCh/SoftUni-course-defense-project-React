@@ -1,6 +1,6 @@
-import { BrowserRouter } from "react-router-dom"
 import { Routes, Route } from "react-router-dom"
 
+import Path from "./paths"
 
 import Navbar from "./components/common/navigation/Navbar"
 import styles from './App.module.css'
@@ -21,27 +21,27 @@ function App() {
 
 	return (
 
-		<div className={styles['app-wrapper']}>
-			<Navbar />
-			<Routes>
-				<Route path="/" element={
-					<>
-						<HeroSection />
-						<InfogramCards />
-						<Team />
-						<Carusel />
-					</>
-				} />
+			<div className={styles['app-wrapper']}>
+				<Navbar />
+				<Routes>
+					<Route path={Path.Home} element={
+						<>
+							<HeroSection />
+							<InfogramCards />
+							<Team />
+							<Carusel />
+						</>
+					} />
 
-				<Route path="gallery" element={<Gallery />} />
+					<Route path={Path.Gallery} element={<Gallery />} />
 
-				<Route path="/customer" element={<CustomerTabs />} />
-				<Route path="/master" element={<MasterTabs />} />
-				<Route path="/register" element={<Register />} />
-				<Route path="/login" element={<Login />} />
-			</Routes>
-			<Footer />
-		</div>
+					<Route path={Path.Customer} element={<CustomerTabs />} />
+					<Route path={Path.Master} element={<MasterTabs />} />
+					<Route path={Path.Register} element={<Register />} />
+					<Route path={Path.Login} element={<Login />} />
+				</Routes>
+				<Footer />
+			</div>
 	)
 }
 
