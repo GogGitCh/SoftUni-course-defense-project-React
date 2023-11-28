@@ -24,8 +24,6 @@ function Register() {
         const formData = new FormData(e.target);
         const result = Object.fromEntries(formData);
 
-        console.log(JSON.stringify(result))
-
         fetch('http://localhost:3030/users/register', {
             method: "POST",
             body: JSON.stringify({
