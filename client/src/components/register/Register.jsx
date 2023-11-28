@@ -41,7 +41,7 @@ function Register() {
                 }
                 console.log(resolved)
                 const token = resolved.accessToken
-                localStorage.setItem("token", token);
+                localStorage.setItem("accessToken", token);
                 navigate(Path.Home);
             })
             .catch((err) => {

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 
 function Navbar() {
+
     return (
         <nav className={styles['navbar-wrapper']}>
             <div className={styles['links']}>
@@ -14,7 +15,7 @@ function Navbar() {
             <div className={styles['user-related']}>
                 <Link to={Path.Login} className={styles['login']} >Log in</Link>
                 <Link to={Path.Register} className={styles['register']} >Register</Link>
-                <Link to={Path.Logout} className={styles['login']} >Log out</Link>
+                <Link to={Path.Logout} className={styles['login']}>Log out</Link>
             </div>
         </nav>
     );

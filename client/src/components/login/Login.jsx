@@ -28,9 +28,11 @@ function Login() {
             .then((res) => res.json())
             .then((resolved) => {
                 console.log(resolved);
+                const token = resolved.accessToken
+                localStorage.setItem("accessToken",token)
                 navigate(Path.Home)
             })
-            .catch((err) => console.log(err))
+            .catch((err) => {console.log(err)})
 
     }
 

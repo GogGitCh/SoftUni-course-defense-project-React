@@ -14,6 +14,7 @@ import CustomerTabs from "./components/customer/client/CustomerTabs"
 import MasterTabs from "./components/customer/master/MasterTabs"
 import Register from "./components/register/Register"
 import Login from "./components/login/Login"
+import Logout from "./components/logout/Logout"
 
 
 function App() {
@@ -21,27 +22,29 @@ function App() {
 
 	return (
 
-			<div className={styles['app-wrapper']}>
-				<Navbar />
-				<Routes>
-					<Route path={Path.Home} element={
-						<>
-							<HeroSection />
-							<InfogramCards />
-							<Team />
-							<Carusel />
-						</>
-					} />
+		<div className={styles['app-wrapper']}>
+			<Navbar />
+			<Routes>
+				<Route path={Path.Home} element={
+					<>
+						<HeroSection />
+						<InfogramCards />
+						<Team />
+						<Carusel />
+					</>
+				} />
 
-					<Route path={Path.Gallery} element={<Gallery />} />
+				<Route path={Path.Logout} element={<Logout />} />
 
-					<Route path={Path.Customer} element={<CustomerTabs />} />
-					<Route path={Path.Master} element={<MasterTabs />} />
-					<Route path={Path.Register} element={<Register />} />
-					<Route path={Path.Login} element={<Login />} />
-				</Routes>
-				<Footer />
-			</div>
+				<Route path={Path.Gallery} element={<Gallery />} />
+
+				<Route path={Path.Customer} element={<CustomerTabs />} />
+				<Route path={Path.Master} element={<MasterTabs />} />
+				<Route path={Path.Register} element={<Register />} />
+				<Route path={Path.Login} element={<Login />} />
+			</Routes>
+			<Footer />
+		</div>
 	)
 }
 

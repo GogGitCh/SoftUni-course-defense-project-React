@@ -11,10 +11,10 @@
     /* Box sizing rules */
 
     /* Main page */
-    /* background-image:url('../public/images/main/bg_Marber-gray.jpg'); */
+    background-image:url('../public/images/main/bg_Marber-gray.jpg');
 
     /* Gallery */
-    background-image: url("/images/gallery/bg_ArmaReno-pink.jpg");
+    /* background-image: url("/images/gallery/bg_ArmaReno-pink.jpg"); */
     
     display: flex;
     flex-direction: column;

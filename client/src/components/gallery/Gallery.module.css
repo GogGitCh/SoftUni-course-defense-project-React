@@ -27,12 +27,11 @@
 }
 
 .style {
-    /* background-color: chartreuse; */
+    background-color: none;
     display: flex;
     list-style: none;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    
+    /* flex-wrap: nowrap; */
+    /* overflow: hidden; */
 
     padding: 0;
     margin: 0;

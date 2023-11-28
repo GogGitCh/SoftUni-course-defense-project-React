@@ -1,9 +1,29 @@
 .main-item-wrapper {
     position: relative;
-    background-color: var(--gradientBright);
+    /* background-color: var(--gradientBright); */
     display: flex;
-    flex-direction: column;    
-    
+    flex-direction: column;
+    margin: 2em;
+}
+
+.item-options-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--gradientBrighter);
+    width: 90%;
+    height: auto;
+    margin: 1em auto auto 1em; 
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 0.5em;
+    font-weight: 600;
+    overflow:hidden;
+}
+
+.main-item-wrapper:hover .item-options,
+.item-image:hover + .item-options {
+    display: flex;
 }
 
 .item-image {
@@ -15,16 +35,15 @@
 }
 
 .item-options {
+    display: none;
     position: absolute;
-    left:0;
-    bottom:1px;
-    display: flex;
+    left: 0;
+    bottom: 1px;
     justify-content: space-around;
     width: 100%;
     padding: 0.3em;
     z-index: 10;
-    gap:0.2em
-    
+    gap: 0.2em;
 }
 
 .materials-coast,
@@ -36,12 +55,22 @@
     display: flex;
     flex: 1 1;
     aspect-ratio: 1/1;
-    gap:0.5em;
-    background-color:var(--gradientBrighter);
+    gap: 0.5em;
+    background-color: var(--gradientBrighter);
     z-index: 20;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
+}
+
+.materials-coast:hover,
+.labour-coast:hover,
+.tools-needed:hover,
+.tools-needed:hover,
+.implemenmtation:hover,
+.apply:hover {
+    background-color: transparent;
+    border: 2px solid var(--primaryPink);
 }
 
 .icon {
