@@ -20,12 +20,12 @@ function Login() {
 
         fetch('http://localhost:3030/users/login', {
             method: 'POST',
-            body:JSON.stringify(result),
+            body: JSON.stringify(result),
             headers: {
                 "Content-type": "application/json"
             }
         })
-            .then((res,err) => {
+            .then((res, err) => {
                 if (res.status == 200) {
                     return res.json();
                 }
@@ -33,16 +33,17 @@ function Login() {
                 throw new Error(err)
             })
             .then((resolved) => {
-                    console.log(resolved);
+                console.log(resolved);
 
-                    const token = resolved.accessToken;
-                    localStorage.setItem("accessToken",token);
-                    const role = resolved.role;
-                    localStorage.setItem("role",role);
+                const token = resolved.accessToken;
+                localStorage.setItem("accessToken", token);
+                const role = resolved.role;
+                localStorage.setItem("role", role);
 
-                    navigate(Path.Home);          
+
+                navigate(Path.Home);
             })
-            .catch((err) => {console.log(err)})
+            .catch((err) => { console.log(err) })
 
     }
 

@@ -4,14 +4,20 @@ import { Link } from 'react-router-dom'
 
 import styles from './Navbar.module.css'
 
-function Navbar() {
+function Navbar({
+    userPathHandler
+}) {
+
+    const triggerUserPahtHandler = () => {
+        userPathHandler();
+    }
 
     return (
         <nav className={styles['navbar-wrapper']}>
             <div className={styles['links']}>
                 <Link to={Path.Home} className={styles['login']} >Home</Link>
                 <Link to={Path.Gallery} className={styles['login']} >Gallery</Link>
-                <Link to={Path.MySpace} className={styles['login']} >My space</Link>
+                <Link to={Path.MySpace} className={styles['login']} onClick={triggerUserPahtHandler}>My space</Link>
             </div>
             <div className={styles['user-related']}>
                 <Link to={Path.Login} className={styles['login']} >Log in</Link>

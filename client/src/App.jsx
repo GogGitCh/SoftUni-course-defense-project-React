@@ -20,10 +20,11 @@ import { useEffect } from "react"
 
 
 function App() {
-	const [userRole, setUserRole] = useState(localStorage.getItem('role'));
+	// const [userRole, setUserRole] = useState(localStorage.getItem('role'));
+	const userRole = localStorage.getItem('role');
 	const [userPath, setUserPath] = useState(null);
-	
-	useEffect(() => {
+
+	const userPathHandler = () => {
 		switch (userRole) {
 			case 'master':
 				setUserPath(<MasterTabs />)
@@ -37,11 +38,14 @@ function App() {
 			// case 'master':
 			// 	setUserPath('MasterTabs')
 			// 	break;
-		
+
 			default:
 				break;
 		}
-	}, [userRole])
+
+	}
+
+	useEffect(userPathHandler, [userRole]);
 
 	return (
 
@@ -58,7 +62,7 @@ function App() {
 				} />
 
 
-				<Route path={Path.MySpace} element={userPath} />
+				<Route path={Path.MySpace} element={userPath} userPathHandler={userPathHandler}/>
 
 
 				<Route path={Path.Register} element={<Register />} />
