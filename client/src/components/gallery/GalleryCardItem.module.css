@@ -21,6 +21,24 @@
     overflow:hidden;
 }
 
+.item-options-info-hidden {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--gradientBrighter);
+    width: 90%;
+    height: auto;
+    margin: 1em auto auto 1em; 
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 0.5em;
+    font-weight: 600;
+    overflow:hidden;
+}
+
+
+
 .main-item-wrapper:hover .item-options,
 .item-image:hover + .item-options {
     display: flex;
