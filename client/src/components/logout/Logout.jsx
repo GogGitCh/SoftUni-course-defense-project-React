@@ -20,6 +20,7 @@ function Logout() {
                 if (res.status === 204) {
                     console.log('You have logged out successfully');
                     localStorage.removeItem('accessToken');
+                    localStorage.removeItem('role');
                     navigate(Path.Home)
                 } else if (res.status === 403) {
                     console.error('Access forbidden. Check your access token and permissions.');

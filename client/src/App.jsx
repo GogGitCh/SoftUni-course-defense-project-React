@@ -15,10 +15,33 @@ import MasterTabs from "./components/customer/master/MasterTabs"
 import Register from "./components/register/Register"
 import Login from "./components/login/Login"
 import Logout from "./components/logout/Logout"
+import { useState } from "react"
+import { useEffect } from "react"
 
 
 function App() {
-
+	const [userRole, setUserRole] = useState(localStorage.getItem('role'));
+	const [userPath, setUserPath] = useState(null);
+	
+	useEffect(() => {
+		switch (userRole) {
+			case 'master':
+				setUserPath(<MasterTabs />)
+				break;
+			case 'client':
+				setUserPath(<CustomerTabs />)
+				break;
+			// case 'master':
+			// 	setUserPath('MasterTabs')
+			// 	break;
+			// case 'master':
+			// 	setUserPath('MasterTabs')
+			// 	break;
+		
+			default:
+				break;
+		}
+	}, [userRole])
 
 	return (
 
@@ -34,14 +57,18 @@ function App() {
 					</>
 				} />
 
+
+				<Route path={Path.MySpace} element={userPath} />
+
+
+				<Route path={Path.Register} element={<Register />} />
+				<Route path={Path.Login} element={<Login />} />
 				<Route path={Path.Logout} element={<Logout />} />
 
 				<Route path={Path.Gallery} element={<Gallery />} />
 
 				<Route path={Path.Customer} element={<CustomerTabs />} />
 				<Route path={Path.Master} element={<MasterTabs />} />
-				<Route path={Path.Register} element={<Register />} />
-				<Route path={Path.Login} element={<Login />} />
 			</Routes>
 			<Footer />
 		</div>

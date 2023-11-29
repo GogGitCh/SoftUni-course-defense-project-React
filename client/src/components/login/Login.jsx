@@ -25,12 +25,22 @@ function Login() {
                 "Content-type": "application/json"
             }
         })
-            .then((res) => res.json())
+            .then((res,err) => {
+                if (res.status == 200) {
+                    return res.json();
+                }
+                console.log(res);
+                throw new Error(err)
+            })
             .then((resolved) => {
-                console.log(resolved);
-                const token = resolved.accessToken
-                localStorage.setItem("accessToken",token)
-                navigate(Path.Home)
+                    console.log(resolved);
+
+                    const token = resolved.accessToken;
+                    localStorage.setItem("accessToken",token);
+                    const role = resolved.role;
+                    localStorage.setItem("role",role);
+
+                    navigate(Path.Home);          
             })
             .catch((err) => {console.log(err)})
 

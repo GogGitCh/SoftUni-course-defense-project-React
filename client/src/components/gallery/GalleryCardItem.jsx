@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { useState } from 'react';
 import styles from './GalleryCardItem.module.css'
 
@@ -30,7 +31,6 @@ function GalleryCardItem({
         switch (true) {
             case /_labour-coast_\X*/s.test(className) :
                 setOption(cost);
-
                 break;
             case /_materials-coast_\X*/s.test(className) :
                 setOption(materials);
@@ -44,13 +44,10 @@ function GalleryCardItem({
             case /_apply_\X*/s.test(className) :
                 setOption(apply);
                 break;
-        
             default:
                 break;
         }
         setShowInfoOpt(prevState => !prevState);    
-        // console.log(e.currentTarget.className)
-        console.log(showInfoOpt);
     }
     
     const hideInfoOption = (е) => {

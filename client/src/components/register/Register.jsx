@@ -27,8 +27,14 @@ function Register() {
         fetch('http://localhost:3030/users/register', {
             method: "POST",
             body: JSON.stringify({
-                "email": result.email,
-                "password": result.password
+                [RegisterFormKeys.ProfileImg] : result.profileImg,
+                [RegisterFormKeys.FirstName] : result.firstName,
+                [RegisterFormKeys.FamilyName] : result.familyName,
+                [RegisterFormKeys.Email]: result.email,
+                [RegisterFormKeys.PhoneNumber] : result.phoneNumber,
+                [RegisterFormKeys.Role] : result.role,
+                [RegisterFormKeys.Password]: result.password,
+                [RegisterFormKeys.ConfirmPassword]: result.confirmPass
             }),
             headers: {
                 "Content-type": "application/json"
