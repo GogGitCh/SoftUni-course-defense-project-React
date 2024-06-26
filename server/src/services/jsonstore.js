@@ -4,12 +4,28 @@ const uuid = require('../common/util').uuid;
 
 
 const data = fs.existsSync('./data') ? fs.readdirSync('./data').reduce((p, c) => {
-    const content = JSON.parse(fs.readFileSync('./data/' + c));
-    const collection = c.slice(0, -5);
-    p[collection] = {};
-    for (let endpoint in content) {
-        p[collection][endpoint] = content[endpoint];
+    console.log('Processing file:', c);
+    const filePath = './data/' + c;
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    
+    // Check if the file is empty
+    if (!fileContent) {
+        console.error('File is empty:', c);
+        return p;
     }
+
+    try {
+        const content = JSON.parse(fileContent);
+        const collection = c.slice(0, -5);
+        p[collection] = {};
+        for (let endpoint in content) {
+            p[collection][endpoint] = content[endpoint];
+        }
+    } catch (error) {
+        console.error('Error parsing JSON in file:', c);
+        console.error(error.message);
+    }
+    
     return p;
 }, {}) : {};
 

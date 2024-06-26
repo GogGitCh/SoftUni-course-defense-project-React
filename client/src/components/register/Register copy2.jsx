@@ -19,46 +19,72 @@ function Register() {
     const [errorDisplay, setErrorDisplay] = useState('')
 
 
-    const registerSubmitHandler = (e) => {
+    const registerSubmitHandler = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const result = Object.fromEntries(formData);
 
-        fetch('http://localhost:3030/users/register', {
-            method: "POST",
-            body: JSON.stringify({
-                [RegisterFormKeys.ProfileImg] : result.profileImg,
-                [RegisterFormKeys.FirstName] : result.firstName,
-                [RegisterFormKeys.FamilyName] : result.familyName,
-                [RegisterFormKeys.Email]: result.email,
-                [RegisterFormKeys.PhoneNumber] : result.phoneNumber,
-                [RegisterFormKeys.Role] : result.role,
-                [RegisterFormKeys.Password]: result.password,
-                [RegisterFormKeys.ConfirmPassword]: result.confirmPass
-            }),
-            headers: {
-                "Content-type": "application/json"
-            }
-        })
-            .then((res) => res.json())
-            .then((resolved) => {
-                if (resolved.code == 409) {
-                    throw new Error(resolved.message)
-                }
-                console.log(resolved)
-                const token = resolved.accessToken
-                localStorage.setItem("accessToken", token);
-                const role = resolved.role;
-                localStorage.setItem("role", role);
-                const userId = resolved._id;
-                localStorage.setItem("userId", userId);
-                navigate(Path.Home);
-            })
-            .catch((err) => {
-                setErrorDisplay(`${err.message}`);   
-            });
+        try {
+            const [userResponse, customerResponse] = await Promise.all([
+                fetch('http://localhost:3030/users/register', {
+                    method: "POST",
+                    body: JSON.stringify({
+                        [RegisterFormKeys.ProfileImg]: result.profileImg,
+                        [RegisterFormKeys.FirstName]: result.firstName,
+                        [RegisterFormKeys.FamilyName]: result.familyName,
+                        [RegisterFormKeys.Email]: result.email,
+                        [RegisterFormKeys.PhoneNumber]: result.phoneNumber,
+                        [RegisterFormKeys.Role]: result.role,
+                        [RegisterFormKeys.Password]: result.password,
+                        [RegisterFormKeys.ConfirmPassword]: result.confirmPass
+                    }),
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                }),
+                fetch('http://localhost:3030/bri', {
+                    method: "POST",
+                    body: JSON.stringify({
+                        [RegisterFormKeys.ProfileImg]: result.profileImg,
+                        [RegisterFormKeys.FirstName]: result.firstName,
+                        [RegisterFormKeys.FamilyName]: result.familyName,
+                        [RegisterFormKeys.Email]: result.email,
+                        [RegisterFormKeys.PhoneNumber]: result.phoneNumber,
+                        [RegisterFormKeys.Role]: result.role,
+                        [RegisterFormKeys.Password]: result.password,
+                        [RegisterFormKeys.ConfirmPassword]: result.confirmPass
+                    }),
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                })
+            ]);
 
-    }
+            const [userData, customerData] = await Promise.all([userResponse.json(), customerResponse.json()]);
+
+            // Process user data
+            if (userData.code === 409) {
+                throw new Error(userData.message);
+            }
+            console.log(userData);
+
+            // Process customer data
+            if (customerData.code === 409) {
+                throw new Error(customerData.message);
+            }
+            console.log(customerData);
+
+            const userToken = userData.accessToken;
+            localStorage.setItem("accessToken", userToken);
+            localStorage.setItem("accessToken", userToken);
+
+            navigate(Path.Home);
+        } catch (err) {
+            setErrorDisplay(`${err.message}`);
+        }
+    };
+
+
     return (
         <form onSubmit={registerSubmitHandler}>
             <label htmlFor={RegisterFormKeys.ProfileImg}>Profile Picture</label>

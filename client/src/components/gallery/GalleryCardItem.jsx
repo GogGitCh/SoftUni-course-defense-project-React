@@ -50,7 +50,7 @@ function GalleryCardItem({
         setShowInfoOpt(prevState => !prevState);    
     }
     
-    const hideInfoOption = (е) => {
+    const hideInfoOption = (e) => {
         setShowInfoOpt(prevState => !prevState);
 
     }

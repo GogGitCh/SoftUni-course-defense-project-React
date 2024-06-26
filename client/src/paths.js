@@ -7,6 +7,8 @@ const Path = {
     Register:'/users/register',
     Login:'/users/login',
     Logout: '/users/logout',
+    Edit:'/data/mySpace/edit',
+    Delete:'/data/mySpace/delete'
 };
 
 export default Path;

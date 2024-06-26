@@ -39,6 +39,8 @@ function Login() {
                 localStorage.setItem("accessToken", token);
                 const role = resolved.role;
                 localStorage.setItem("role", role);
+                const userId = resolved._id;
+                localStorage.setItem("userId", userId);
 
 
                 navigate(Path.Home);
